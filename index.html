@@ -1,87 +1,106 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZZL's Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZZL · Notes & Lab</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            margin: 0;
-            background: #f6f8fa;
-            color: #24292f;
+            font-family: 'Inter', 'Noto Serif SC', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
         }
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: #24292f;
-            color: white;
+
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.02em;
         }
-        header h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        header p {
-            font-size: 18px;
-            margin-top: 10px;
-            opacity: 0.8;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .card {
-            background: white;
-            padding: 24px;
-            margin-bottom: 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-        }
-        h2 {
-            margin-top: 0;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #777;
-        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
-<body>
 
-<header>
-    <h1>ZZL's Blog</h1>
-    <p>欢迎来到我的个人博客 👋</p>
-</header>
+<body class="antialiased">
 
-<div class="container">
-    <div class="card">
-        <h2>📌 关于我</h2>
-        <p>你好，我是 ZZL，这是我的个人主页和博客，用来记录学习、思考和生活。</p>
+<!-- NAV BAR -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div class="flex items-center space-x-2 text-slate-800 font-bold text-xl">
+            <i class="ph ph-cube-transparent text-blue-600 text-2xl"></i>
+            <span>ZZL · Lab</span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="/index.html" class="hover:text-blue-600 transition">首页</a>
+            <a href="#posts" class="hover:text-blue-600 transition">文章</a>
+            <a href="/about.html" class="hover:text-blue-600 transition">关于</a>
+            <a href="https://github.com/ZZL-2005/ZZL.github.io" class="hover:text-blue-600 transition">Github</a>
+        </div>
     </div>
+</nav>
 
-    <div class="card">
-        <h2>📝 最新文章</h2>
-        <ul>
-            <li>（你可以在这里添加你的文章链接）</li>
-            <li>例如：<a href="post1.html">第一篇文章标题</a></li>
-        </ul>
+<main class="max-w-7xl mx-auto px-4 py-12">
+
+    <!-- TOP INTRO -->
+    <section class="mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+            个人学习 · 作业 · 随想
+        </h1>
+        <p class="text-slate-600 max-w-2xl">
+            这里记录课程作业、AI 学习笔记，还有一些乱七八糟但挺有意思的想法。
+            每一个文章都是一个独立小项目。
+        </p>
+    </section>
+
+    <!-- POSTS SECTION -->
+    <section id="posts" class="space-y-6">
+        <h2 class="text-xl font-semibold text-slate-900 mb-4">最近更新</h2>
+
+        <!-- POSTS CARDS WILL BE AUTOMATICALLY INSERTED HERE BY GITHUB ACTIONS -->
+        <!-- Example Auto-Generated Card Format:
+
+        <article class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 hover:border-blue-300 hover:shadow-md transition">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-semibold">课程作业</span>
+                    <span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">人工智能伦理</span>
+                </div>
+                <h3 class="text-lg font-semibold text-slate-900">
+                    <a href="/posts/xxx/index.html" class="hover:text-blue-600 transition">
+                        示例文章标题
+                    </a>
+                </h3>
+                <p class="text-sm text-slate-600 max-w-2xl">
+                    这是文章摘要（从 meta.json 来）。
+                </p>
+                <p class="text-xs text-slate-400">2025-02-02 · 10 min</p>
+            </div>
+
+            <div class="mt-4 md:mt-0 flex items-center text-sm">
+                <a href="/posts/xxx/index.html" class="inline-flex items-center text-blue-600 hover:text-blue-700">
+                    阅读全文 <i class="ph ph-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </article>
+
+        -->
+
+    </section>
+</main>
+
+<footer class="bg-white border-t border-slate-200 py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-slate-500 text-sm">© 2025 ZZL · Built with HTML & Tailwind on GitHub Pages.</p>
     </div>
-
-    <div class="card">
-        <h2>📫 联系我</h2>
-        <p>Email: zhangzilu05@gmail.com</p>
-        <p>GitHub: <a href="https://github.com/ZZL" target="_blank">github.com/ZZL</a></p>
-    </div>
-</div>
-
-<footer>
-    © 2025 ZZL · Powered by GitHub Pages
 </footer>
 
 </body>
